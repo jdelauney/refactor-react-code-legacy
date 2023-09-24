@@ -27,3 +27,6 @@ dist-ssr
 firebase.json
 .env
 !.env.local
+firestore.indexes.json
+firestore.rules
+storage.rules
