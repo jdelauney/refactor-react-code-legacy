@@ -4,7 +4,7 @@ import type { UserConfig } from 'vitest/config';
 
 const test = {
   globals: true,
-  environment: 'jsdom',
+  environment: 'node',
   threads: false,
   watch: false,
   reporter: 'verbose',
