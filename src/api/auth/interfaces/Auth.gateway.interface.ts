@@ -9,6 +9,7 @@ export interface AuthGatewayInterface {
   registerUserWithEmailAndPassword({ email, password }: AuthUserPayload): Promise<AuthUser>;
   signInWithEmailAndPassword({ email, password }: AuthUserPayload): Promise<AuthUser>;
   signOut(): Promise<void>;
+  deleteUser(): Promise<void>;
   //onAuthStateChanged(listener: (user: AuthUser) => void): void;
   //getCurrentUser(): Promise<AuthUser>;
   //updateCurrentUser(user: UserModel): Promise<void>;
