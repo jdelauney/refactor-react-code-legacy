@@ -1,7 +1,7 @@
 import { AuthGatewayInterface } from '../interfaces/Auth.gateway.interface';
 import { AuthUser } from '../model/AuthUser';
 
-export class registerUserWithEmailAndPasswordUseCase {
+export class RegisterUserWithEmailAndPasswordUseCase {
   constructor(private readonly authGateway: AuthGatewayInterface) {}
 
   async execute(email: string, password: string): Promise<AuthUser> {
