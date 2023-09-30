@@ -10,6 +10,7 @@ export const dataMainMenu: MenuItems = [
     linkClassName: 'text-decoration-none hover:text-decoration-none text-body flex items-center text-2xl',
     labelClassName: 'lg:ms-6 hidden xl:inline-block',
     className: 'py-2 px-4 text-lg xl:w-full',
+    requiredAuth: false,
   },
   {
     url: '/explorer',
@@ -18,6 +19,7 @@ export const dataMainMenu: MenuItems = [
     linkClassName: 'text-decoration-none hover:text-decoration-none text-body flex items-center text-2xl',
     labelClassName: 'lg:ms-6 hidden xl:inline-block',
     className: 'py-2 px-4 text-lg xl:w-full',
+    requiredAuth: false,
   },
   {
     url: '/profile',
@@ -26,6 +28,7 @@ export const dataMainMenu: MenuItems = [
     linkClassName: 'text-decoration-none hover:text-decoration-none text-body flex items-center text-2xl',
     labelClassName: 'lg:ms-6 hidden xl:inline-block',
     className: 'py-2 px-4 text-lg xl:w-full',
+    requiredAuth: true,
   },
   {
     url: '/contact',
@@ -34,6 +37,7 @@ export const dataMainMenu: MenuItems = [
     linkClassName: 'text-decoration-none hover:text-decoration-none text-body flex items-center text-2xl',
     labelClassName: 'lg:ms-6 hidden xl:inline-block',
     className: 'py-2 px-4 text-lg xl:w-full',
+    requiredAuth: false,
   },
   {
     url: '/post',
@@ -44,5 +48,6 @@ export const dataMainMenu: MenuItems = [
     iconClassName: 'xl:hidden',
     labelClassName: 'hidden xl:inline-block',
     className: 'py-2 px-0 text-lg xl:w-full',
+    requiredAuth: true,
   },
 ];

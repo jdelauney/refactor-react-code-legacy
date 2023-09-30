@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export type MenuItem = {
   url: string;
+  requiredAuth: boolean;
   label?: string;
   Icon?: ReactNode;
   linkClassName?: string;

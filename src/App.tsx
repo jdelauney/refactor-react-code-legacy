@@ -58,12 +58,17 @@ function App() {
                 path={route.path}
                 element={
                   <PageLayout>
-                    {route.requiresAuth ? <RequiredAuth loginPath={'/'}>{route.element}</RequiredAuth> : route.element}
+                    {route.requiresAuth ? (
+                      <RequiredAuth loginPath={'/authenticate/login'}>{route.element}</RequiredAuth>
+                    ) : (
+                      route.element
+                    )}
                   </PageLayout>
                 }
               />
             );
           })}
+          <Route path={'*'} element={<h1>404</h1>} />
         </Routes>
       </AuthContext.Provider>
     </div>

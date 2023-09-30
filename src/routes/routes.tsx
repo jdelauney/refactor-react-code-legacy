@@ -1,5 +1,6 @@
 import { Home } from '../pages/Home/Home.tsx';
 import { ReactNode } from 'react';
+import { Authenticate } from '../pages/Authenticate/Authenticate.tsx';
 
 export type RouteDef = {
   path: string;
@@ -12,6 +13,13 @@ export const routes: RouteDef[] = [
     path: '/',
     name: 'home',
     element: <Home />,
+    requiresAuth: false,
+  },
+
+  {
+    path: '/authenticate/:authType',
+    name: 'authenticate',
+    element: <Authenticate />,
     requiresAuth: false,
   },
 ];
