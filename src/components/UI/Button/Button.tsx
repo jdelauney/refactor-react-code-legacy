@@ -17,9 +17,9 @@ export const Button = ({ className, children, isLink, to, ...restOfProps }: Butt
     );
   } else {
     return (
-      <Button className={buttonClasses} {...restOfProps}>
+      <button className={buttonClasses} {...restOfProps}>
         {children}
-      </Button>
+      </button>
     );
   }
 };
