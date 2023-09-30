@@ -6,11 +6,13 @@ import { FormGroup } from '../FormGroup/FormGroup.tsx';
 
 type InputFieldProps = PropsWithChildren<{
   inputDataField: InputDataFieldType;
-  onInputChange: (e: ChangeEvent<unknown>) => void;
+  onInputChange: (e: ChangeEvent) => void;
 }>;
 export const InputField = forwardRef(({ inputDataField, onInputChange, children }: InputFieldProps, ref) => {
+  const { type, label, name } = inputDataField;
+  const { messageHelp, messageError, ...dataField } = inputDataField;
   let inputElement: ReactNode;
-  switch (inputDataField.type) {
+  switch (type) {
     case 'text':
     case 'email':
     case 'password':
@@ -21,10 +23,10 @@ export const InputField = forwardRef(({ inputDataField, onInputChange, children 
     case 'time':
     case 'datetime':
     case 'color':
-      inputElement = InputTextProvider(inputDataField, onInputChange, ref);
+      inputElement = InputTextProvider(dataField, onInputChange, ref);
       break;
     case 'textarea':
-      inputElement = TextareaProvider(inputDataField, onInputChange, ref);
+      inputElement = TextareaProvider(dataField, onInputChange, ref);
       break;
     default:
       throw new Error('InputField: type is not valid');
@@ -32,7 +34,13 @@ export const InputField = forwardRef(({ inputDataField, onInputChange, children 
 
   return (
     <>
-      <FormGroup inputElement={inputElement} label={inputDataField.label} inputName={inputDataField.name}>
+      <FormGroup
+        inputElement={inputElement}
+        label={label}
+        inputName={name}
+        inputErrorMessage={messageError}
+        inputHelpMessage={messageHelp}
+      >
         {children}
       </FormGroup>
     </>

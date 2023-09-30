@@ -9,7 +9,7 @@ export const InputTextProvider = (
 ) => {
   const { value, hasRef, customOptions, isUncontrolled, ...restOfAttributes } = dataField;
   let valueProp;
-  if (isUncontrolled) {
+  if (isUncontrolled && onInputChange === undefined) {
     valueProp = { defaultValue: value as string };
   } else {
     valueProp = { value: value as string };
@@ -21,7 +21,7 @@ export const InputTextProvider = (
       {...valueProp}
       //value={value as string}
       ref={hasRef ? ref : undefined}
-      onChange={onInputChange}
+      onInput={onInputChange}
     />
   );
 };

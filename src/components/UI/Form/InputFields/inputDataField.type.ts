@@ -11,4 +11,6 @@ export type InputDataFieldType = {
   customOptions?: { [key: string]: string | number | boolean };
   hasRef?: boolean;
   isUncontrolled?: boolean;
+  messageHelp?: string;
+  messageError?: string;
 };

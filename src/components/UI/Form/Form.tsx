@@ -5,7 +5,7 @@ import { InputFields } from './InputFields/InputFields.tsx';
 type FormProps = PropsWithChildren<{
   className?: string;
   fields: InputDataFieldType[];
-  onInputChange: (e: ChangeEvent<unknown>) => void;
+  onInputChange: (e: ChangeEvent) => void;
   onSubmit: (e: ChangeEvent<HTMLFormElement>) => void;
 }> &
   HTMLAttributes<HTMLFormElement>;
@@ -15,7 +15,7 @@ export const Form = forwardRef(
     return (
       <form className={className} onSubmit={onSubmit} {...restOfProps}>
         <InputFields fields={fields} onInputChange={onInputChange} ref={ref} />
-        {children}
+        <>{children}</>
       </form>
     );
   }
